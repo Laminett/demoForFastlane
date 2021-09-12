@@ -1,0 +1,29 @@
+### Create Users
+POST http://{{host}}:{{port}}/api/users/create
+content-type: application/json
+
+{
+  "id": "55555  ",
+  "password": "34555"
+}
+
+### Get UserById
+GET http://{{host}}:{{port}}/api/users/55555
+content-type: application/json
+
+### Modify password
+POST http://{{host}}:{{port}}/api/users/55555
+content-type: application/json
+
+{
+  "password": "343434",
+  "newPassword": "3434341"
+}
+
+### Get Users
+GET http://{{host}}:{{port}}/api/users/
+content-type: application/json
+
+### Delete User
+DELETE http://{{host}}:{{port}}/api/users/55555
+content-type: application/json
