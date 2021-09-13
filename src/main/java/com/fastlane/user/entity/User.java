@@ -18,10 +18,10 @@ import javax.persistence.*;
 public class User {
 
     @Id
-    @Column
+    @Column(nullable = false)
     private String id;
 
-    @Column
+    @Column(nullable = false)
     private String password;
 
     @Builder
