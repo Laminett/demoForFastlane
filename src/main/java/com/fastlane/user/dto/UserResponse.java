@@ -17,4 +17,9 @@ public class UserResponse {
         this.password = entity.getPassword();
     }
 
+    public UserResponse(String id, String password) {
+        this.id = id;
+        this.password = password;
+    }
+
 }

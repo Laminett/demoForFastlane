@@ -76,11 +76,11 @@ public class UserService {
     }
 
     @Transactional
-    public String delete(String id) {
+    public UserResponse delete(String id) {
         userRepository.delete(userRepository.findById(id)
                 .orElseThrow(() -> new UserNotFoundException(id)));
 
-        return id;
+        return new UserResponse(id, "deleted");
     }
 
 }

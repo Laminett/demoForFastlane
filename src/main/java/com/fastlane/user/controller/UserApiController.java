@@ -26,7 +26,7 @@ public class UserApiController {
     }
 
     @ApiOperation(value = "Update User", notes = "회원정보 변경(현재 비밀번호만 변경 가능)")
-    @PostMapping("/api/users/{id}")
+    @PutMapping("/api/users/{id}")
     public UserResponse update(@PathVariable String id, @RequestBody @Valid UserUpdateRequest userUpdateRequest) {
         return userService.update(id, userUpdateRequest);
     }
@@ -45,11 +45,8 @@ public class UserApiController {
 
     @ApiOperation(value = "Delete User", notes = "회원 삭제")
     @DeleteMapping("/api/users/{id}")
-    public String delete(@PathVariable String id) {
-        userService.delete(id);
-
-        return id;
+    public UserResponse delete(@PathVariable String id) {
+        return userService.delete(id);
     }
-
 
 }
